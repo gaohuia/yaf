@@ -32,6 +32,7 @@
 #include "yaf_request.h"
 #include "yaf_bootstrap.h"
 #include "yaf_exception.h"
+#include "functions.h"
 
 zend_class_entry * yaf_application_ce;
 
@@ -524,11 +525,14 @@ PHP_METHOD(yaf_application, bootstrap) {
 	if (!(ce = zend_hash_str_find_ptr(EG(class_table),
 					YAF_DEFAULT_BOOTSTRAP_LOWER, sizeof(YAF_DEFAULT_BOOTSTRAP_LOWER) - 1))) {
 		if (YAF_G(bootstrap)) {
-			bootstrap_path = zend_string_copy(YAF_G(bootstrap));
+			bootstrap_path = zend_string_dup(YAF_G(bootstrap), 1);
 		} else {
 			bootstrap_path = strpprintf(0, "%s%c%s.%s",
-					ZSTR_VAL(YAF_G(directory)), DEFAULT_SLASH, YAF_DEFAULT_BOOTSTRAP, ZSTR_VAL(YAF_G(ext)));
+					ZSTR_VAL(YAF_G(directory)), DEFAULT_SLASH, &YAF_DEFAULT_BOOTSTRAP[4], ZSTR_VAL(YAF_G(ext)));
 		}
+
+        standard_path(bootstrap_path);
+
 		if (!yaf_loader_import(bootstrap_path, 0)) {
 			php_error_docref(NULL, E_WARNING, "Couldn't find bootstrap file %s", ZSTR_VAL(bootstrap_path));
 			retval = 0;

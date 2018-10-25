@@ -17,8 +17,8 @@
 #ifndef YAF_BOOTSTRAP_H
 #define YAF_BOOTSTRAP_H
 
-#define YAF_DEFAULT_BOOTSTRAP		  	"Bootstrap"
-#define YAF_DEFAULT_BOOTSTRAP_LOWER	  	"bootstrap"
+#define YAF_DEFAULT_BOOTSTRAP		  	"app\\Bootstrap"
+#define YAF_DEFAULT_BOOTSTRAP_LOWER	  	"app\\bootstrap"
 #define YAF_BOOTSTRAP_INITFUNC_PREFIX  	"_init"
 
 extern zend_class_entry *yaf_bootstrap_ce;

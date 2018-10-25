@@ -22,6 +22,7 @@
 
 #define YAF_LIBRARY_DIRECTORY_NAME    		"library"
 #define YAF_CONTROLLER_DIRECTORY_NAME 		"controllers"
+#define YAF_APPLICATION_NS           		"app"
 #define YAF_PLUGIN_DIRECTORY_NAME 	  		"plugins"
 #define YAF_MODULE_DIRECTORY_NAME     		"modules"
 #define YAF_VIEW_DIRECTORY_NAME       		"views"
