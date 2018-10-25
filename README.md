@@ -6,7 +6,7 @@ PHP framework written in c and built as a PHP extension. Forked from Laruence's 
 Here is some difference with Laruence's Yaf.
 
 * Controller class in default module must be in a namespace `app\controllers` when `use_namespace` is On;
-* Controller class in none default module must be in a namespace `app\modules\[Module]\controllers` when `use_namespace` is On; Which `[Module]` is your module name
+* Controller class in none default module must be in a namespace `app\modules\[Module]\controllers` when `use_namespace` is On; In which `[Module]` is your module name
 * Bootstrip class must be in namespace `app` when `use_namespace` is On;
 
 ## Requirement
