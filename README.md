@@ -8,6 +8,42 @@ Here is some difference with Laruence's Yaf.
 * Controller class in default module must be in a namespace `app\controllers` when `use_namespace` is On;
 * Controller class in none default module must be in a namespace `app\modules\[Module]\controllers` when `use_namespace` is On; In which `[Module]` is your module name
 * Bootstrip class must be in namespace `app` when `use_namespace` is On;
+* `name_suffix` will be ignored when `use_namespace` is On;
+
+In another words, you can write controllers like this.
+```php
+
+<?php
+
+namespace app\controllers;     
+
+class Ns extends \Yaf\Controller_Abstract 
+{
+    public function testAction()    
+    { 
+        echo 'hello';          
+    }
+}
+```
+
+Or like this if your are writting controllers in a none default module.
+
+```php
+<?php
+
+namespace app\modules\Api\controllers;
+
+use core\controllers\WebController;
+
+class Passport extends WebController
+{
+    public function loginAction()
+    {   
+        echo 'login ok';
+    }
+}
+```
+
 
 ## Requirement
 - PHP 5.2 +
