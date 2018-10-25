@@ -1,18 +1,19 @@
 # Yaf - Yet Another Framework  
 [![Build Status](https://secure.travis-ci.org/laruence/yaf.png)](https://travis-ci.org/laruence/yaf)
 
-PHP framework written in c and built as a PHP extension.
+PHP framework written in c and built as a PHP extension. Forked from Laruence's yaf.
+
+Here is some difference with Laruence's Yaf.
+
+* Controller class in default module must be in a namespace `app\controllers` when `use_namespace` is On;
+* Controller class in none default module must be in a namespace `app\modules\[Module]\controllers` when `use_namespace` is On; Which `[Module]` is your module name
+* Bootstrip class must be in namespace `app` when `use_namespace` is On;
 
 ## Requirement
 - PHP 5.2 +
 
 ## Install
-### Install Yaf 
-Yaf is a PECL extension, thus you can simply install it by:
 
-```
-$pecl install yaf
-```
 ### Compile Yaf in Linux
 ```
 $/path/to/phpize
