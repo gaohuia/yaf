@@ -380,7 +380,7 @@ zend_class_entry *yaf_dispatcher_get_controller_ns(zend_string *app_dir, zend_st
 		class_lowercase = zend_string_tolower(class);
 
 
-        standard_path(class_file_path);
+        class_file_path = standard_path(class_file_path);
 
 
 		if ((ce = zend_hash_find_ptr(EG(class_table), class_lowercase)) == NULL) {

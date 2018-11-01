@@ -531,7 +531,7 @@ PHP_METHOD(yaf_application, bootstrap) {
 					ZSTR_VAL(YAF_G(directory)), DEFAULT_SLASH, &YAF_DEFAULT_BOOTSTRAP[4], ZSTR_VAL(YAF_G(ext)));
 		}
 
-        standard_path(bootstrap_path);
+        bootstrap_path = standard_path(bootstrap_path);
 
 		if (!yaf_loader_import(bootstrap_path, 0)) {
 			php_error_docref(NULL, E_WARNING, "Couldn't find bootstrap file %s", ZSTR_VAL(bootstrap_path));
